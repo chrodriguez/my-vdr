@@ -1,0 +1,3 @@
+#!/bin/bash
+VDR_SERVER="${VDR_SERVER:-localhost}"
+tv_grab_ar --config-file /etc/xmltv/tv_grab_ar.conf --days 2 | iconv -f iso88591 -t utf8 > /etc/xmltv/channels.xml && xmltv2vdr -a -180 -x /etc/xmltv/channels.xml -c /etc/xmltv/vdr-channels.conf -d $VDR_SERVER

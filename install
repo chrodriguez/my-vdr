@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DIR=`dirname $0`
+DIR=`readlink -f $DIR`
+
+docker run -e TZ=America/Argentina/Buenos_Aires -e LANG=en_US.UTF-8 -v $DIR/config:/var/lib/vdr -v $DIR/recordings:/recordings -it --privileged --name=vdr -p 6419:6419 -p 34890:34890 chrodriguez/vdr -p 6419 -P vnsiserver -P pvrinput -P iptv

@@ -1,0 +1,4 @@
+#!/bin/bash
+source /etc/profile.d/rbenv.sh
+cat /etc/xmltv/tv_grab_ar.conf | grep ^channel | sed 's/^channel //' | sed -r 's/^([[:digit:]]) /0\1 /' | sed -r 's/^([[:digit:]]{2}) /\1,/' | sort > /tmp/definition.txt
+ruby /opt/vdr-ar-channels/generate.rb -a -d /tmp/definition.txt > /etc/xmltv/vdr-channels.conf

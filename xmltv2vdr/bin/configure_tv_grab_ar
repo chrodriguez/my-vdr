@@ -1,0 +1,5 @@
+#!/bin/bash
+
+tv_grab_ar --config-file /etc/xmltv/tv_grab_ar.conf --configure
+iconv -f iso88591 -tutf8 /etc/xmltv/tv_grab_ar.conf > /tmp/tv_grab_ar.conf
+mv /tmp/tv_grab_ar.conf /etc/xmltv/tv_grab_ar.conf
