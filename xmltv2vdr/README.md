@@ -39,6 +39,7 @@ SHELL=/bin/bash
 	/usr/bin/docker run --rm -v `pwd`/bin:/script \
 		-v `pwd`/config/:/etc/xmltv \
 		-e VDR_SERVER=my-vdr.hostname.example.net \
+		-e TZ=America/Argentina/Buenos_Aires \
 		chrodriguez/xmltv /script/update-epg-vdr
 ```
 
